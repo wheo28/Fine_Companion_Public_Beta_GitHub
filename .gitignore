@@ -1,0 +1,37 @@
+# Dependencies
+node_modules/
+
+# Build output (GitHub Actions builds this; do not commit it)
+dist/
+dist-ssr/
+
+# Env & secrets (never commit real env files)
+.env
+.env.*
+!.env.example
+
+# Test/coverage output
+coverage/
+*.lcov
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local dev QA artifacts, screenshots, internal reports, archives
+qa/
+shots_*/
+*.zip
+*_REPORT.md
+*_REVIEW.md
+PUBLIC_BETA_PRELAUNCH_CHECKLIST.md
+
+# Editors / OS
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+*.local

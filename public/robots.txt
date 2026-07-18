@@ -1,0 +1,5 @@
+# FinE Companion — public beta.
+# Discourages ordinary search indexing. This is NOT access control:
+# anyone with the URL can use the public beta, and the repository source is public.
+User-agent: *
+Disallow: /

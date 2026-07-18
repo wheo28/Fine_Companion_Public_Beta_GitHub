@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="FinE Companion">
+  <rect width="32" height="32" rx="7" fill="#16241d"/>
+  <g transform="translate(4 4)" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+    <g stroke="#e0ab55">
+      <path d="M12 3.5v2"/>
+      <path d="m5.6 7.2 1.2 1.2"/>
+      <path d="m18.4 7.2-1.2 1.2"/>
+      <path d="M7 15.5a5 5 0 0 1 10 0"/>
+    </g>
+    <g stroke="#ece5d3">
+      <path d="M2.5 15.5h19"/>
+      <path d="M4.5 20q7.5-2.2 15 0"/>
+    </g>
+  </g>
+</svg>

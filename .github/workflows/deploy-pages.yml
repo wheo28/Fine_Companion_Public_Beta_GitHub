@@ -1,0 +1,68 @@
+name: Deploy to GitHub Pages
+
+# Builds and deploys FinE Companion (public beta) to GitHub Pages using the
+# current official custom-workflow pattern. Tests gate the build; the Vite base
+# path is derived from the repository name, so no username or repo name is
+# hardcoded. Least-privilege: only the deploy job may write to Pages / OIDC.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+# Allow one concurrent deployment; don't cancel an in-progress production deploy.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Install dependencies (clean)
+        run: npm ci
+
+      - name: Run tests (gate — deployment stops if these fail)
+        run: npm test
+
+      - name: Build (base path from repository name)
+        env:
+          # Derives "/<repository-name>/" from "owner/repo"; no name hardcoded.
+          VITE_BASE_PATH: /${{ github.event.repository.name }}/
+        run: npm run build
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ./dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    # Only deploy from the default branch.
+    if: github.ref == 'refs/heads/main'
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

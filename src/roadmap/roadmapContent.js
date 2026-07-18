@@ -1,0 +1,436 @@
+// Content for the standalone Financial Roadmap (the "heart" of FinE Companion).
+// It reuses the action/why copy from the Checkup results (so the two surfaces
+// never contradict) and adds three Sprint-4 layers:
+//   1. personalization that ties back to the assessment,
+//   2. an educational explanation ("learn") on every recommendation,
+//   3. the Long-Term Vision (5+ years) horizon.
+// Educational only — no product, investment, insurance, tax, or legal advice.
+
+export const roadmapContent = {
+  en: {
+    empty: {
+      eyebrow: 'Your path',
+      title: 'Nothing here yet — and that\u2019s okay.',
+      body: 'Start with one short check, about two minutes, and your path begins to grow right here — one small step for today, and a gentle sense of where you\u2019re headed. Nothing is sent anywhere; it all stays on your device.',
+      cta: 'Take a look',
+    },
+    header: {
+      eyebrow: 'Your roadmap',
+      title: 'A path made from your checkup.',
+      based: 'Based on your checkup',
+      ongoing: 'This isn\u2019t the last word — it\u2019s a companion you can return to. It changes as your life changes.',
+      intros: {
+        strong:
+          'Your checkup showed a genuinely steady foundation — so this roadmap is less about fixing anything and more about building on the strength you already have.',
+        stable:
+          "Your checkup showed a reasonably stable picture with clear strengths — so this roadmap points your energy where it'll do the most good, without asking for everything at once.",
+        mixed:
+          "Your checkup showed a picture that's coming together — some solid pieces already in place, and a few areas ready for gentle attention. This roadmap takes them one at a time.",
+        stretched:
+          'Your checkup showed things feel a little stretched right now — so this roadmap starts small and close, with steps that lighten the load first. No pressure, just a next step.',
+      },
+      focusLinePrefix: 'It begins with ',
+      focusLineSuffix: ', and grows from there — one gentle step at a time.',
+      focusLabel: {
+        cashflow: 'your monthly cash flow',
+        emergency: 'a small emergency cushion',
+        debt: 'easing debt pressure',
+        retirement: 'starting something for your future',
+        insurance: 'understanding your coverage',
+        stress: 'lightening money stress',
+        steady: 'choosing your next goal',
+      },
+      recapLabel: 'From your checkup',
+      chips: { focus: 'Focus', emergency: 'Emergency fund', cashflow: 'Cash flow', stress: 'Stress' },
+      months: 'mo',
+      cashflowStates: { short: 'Running a gap', even: 'Breaking even', healthy: 'Healthy margin', strong: 'Strong margin' },
+      plan: {
+        heading: 'A plan you chose', chosenByYou: 'Chosen by you',
+        roomLine: 'Room left', gapLine: 'Short this month', changeLine: 'Change from usual',
+        changedHeading: 'What you changed',
+        plansPath: 'Open in My plans',
+        staleNote: 'Based on an earlier check-up. Want to review it?',
+        review: 'Review', edit: 'Edit', remove: 'Remove',
+        checkupPath: 'Go to your check-up',
+        leverLabels: { income: 'Money coming in', essentials: 'Must-pays', nonEssentials: 'Flexible spending', debt: 'Debt payment' },
+      },
+      debtPlan: {
+        heading: 'A debt plan you chose',
+        chosenByYou: 'Chosen by you',
+        currentPayment: 'Current payment',
+        chosenPayment: 'Chosen payment',
+        durationChange: 'Est. duration change',
+        interestChange: 'Est. interest change',
+        noChange: 'No change',
+        review: 'Review', edit: 'Edit', remove: 'Remove', plansPath: 'Open in My plans',
+      },
+      emergencyPlan: {
+        heading: 'An emergency fund plan you chose',
+        chosenByYou: 'Chosen by you',
+        accessible: 'Money you can reach',
+        mustPays: 'Monthly must-pays',
+        months: 'Estimated months',
+        monthsUnit: 'months',
+        changeInMonths: 'Change in months',
+        stale: 'Based on an earlier check-up picture',
+        checkupPath: 'Go to your check-up',
+        review: 'Review', edit: 'Edit', remove: 'Remove', plansPath: 'Open in My plans',
+      },
+      goalPlan: {
+        heading: 'A goal plan you chose',
+        chosenByYou: 'Chosen by you',
+        target: 'Target',
+        contribution: 'Monthly contribution',
+        projected: 'Projected at the goal',
+        remainingGap: 'Remaining to target',
+        aboveTarget: 'Above target',
+        exactly: 'Exactly at target',
+        progress: 'Projected progress',
+        annualAssumption: 'Annual assumption',
+        review: 'Review', edit: 'Edit', remove: 'Remove', plansPath: 'Open in My plans',
+      },
+      retirementPlan: {
+        heading: 'A retirement plan you chose',
+        chosenByYou: 'Chosen by you',
+        years: 'Years until retirement',
+        contribution: 'Monthly contribution',
+        annualReturn: 'Assumed annual return',
+        projected: 'Projected balance',
+        balanceDiff: 'Projected-balance difference',
+        employer: 'Employer monthly contribution',
+        contribChange: 'Annual contribution change',
+        inflation: 'Inflation assumption',
+        inToday: 'In today\u2019s purchasing power',
+        review: 'Review', edit: 'Edit', remove: 'Remove', plansPath: 'Open in My plans',
+      },
+      insurancePlan: {
+        heading: 'A protection plan you chose',
+        chosenByYou: 'Chosen by you',
+        responsibilities: 'Total responsibilities',
+        coverage: 'Insurance coverage',
+        share: 'Share of the responsibilities entered',
+        uncovered: 'Amount not covered by the resources entered',
+        none: 'No difference under these entries',
+        beyond: 'Amount beyond the responsibilities entered',
+        review: 'Review', edit: 'Edit', remove: 'Remove', plansPath: 'Open in My plans',
+      },
+      stressBands: { low: 'Low', moderate: 'Moderate', elevated: 'Elevated', high: 'High' },
+      cashflowSteer: {
+        label: 'One small way to steer it',
+        even: 'Set aside a small, fixed amount the day you’re paid — a first margin, made on purpose.',
+        healthy: 'Give your leftover a name — a buffer, a goal — so it has somewhere to go.',
+        strong: 'Decide where this month’s surplus goes before it drifts, so your room keeps working for you.',
+      },
+    },
+    horizons: {
+      today: { label: 'Today', lead: 'One small thing you can do in the next few minutes.' },
+      next30: { label: 'Next 30 days', lead: 'A gentle focus for the weeks ahead — no rush.' },
+      habits: { label: 'Monthly habits', lead: 'Small rhythms that quietly do the heavy lifting over time.' },
+      sixTwelve: { label: 'Next 6–12 months', lead: 'A milestone to grow toward as you find your footing.' },
+      fiveYear: { label: 'Long-term vision (5+ years)', lead: 'Where all of these small steps are quietly leading.' },
+    },
+    whyLabel: 'Why it matters',
+    learnLabel: 'Learn',
+    learn: {
+      today: {
+        cashflow:
+          'Awareness is the foundation of budgeting — just tracking where money goes tends to reduce spending, with no willpower required.',
+        emergency:
+          "This is 'paying yourself first' in miniature: money you never see in your spending account is far easier to keep.",
+        debt: "Listing debts is the first step of nearly every payoff method — you can't choose a strategy until you can see the whole picture.",
+        retirement:
+          'Retirement saving runs on compounding — growth that builds on earlier growth — so a small start today can outweigh a big effort years from now.',
+        insurance:
+          'Insurance works by pooling risk: many people pay a little so no one faces a catastrophe alone. Knowing your policy is knowing which risks you have pooled away.',
+        stress:
+          "Researchers call this 'affect labeling' — naming an emotion measurably lowers its intensity in the brain.",
+        steady:
+          'Noticing progress builds self-efficacy — the belief that you can affect your situation — which strongly predicts follow-through.',
+      },
+      next30: {
+        cashflow: "Small, sustainable changes outlast big ones — 'trim one thing' beats an overhaul that usually snaps back.",
+        emergency:
+          'Automation beats motivation: a transfer set up once no longer depends on you being disciplined every single payday.',
+        debt:
+          "Paying the smallest debt first is the 'snowball' method — the early win creates momentum that keeps people going, even when it isn't the fastest route on paper.",
+        retirement:
+          'Many workplace retirement options include an employer match — essentially free money — which makes finding out what you have the highest-value ten minutes in personal finance.',
+        insurance:
+          'Policies hinge on limits, deductibles, and exclusions — the fine print that decides what actually gets paid. Reading one teaches you to read them all.',
+        stress:
+          "Unfinished tasks quietly occupy the mind (the 'Zeigarnik effect'); finishing just one closes the loop and eases the background hum.",
+        steady: 'Habits strengthen with repetition in a stable setting — deepening a routine you already have is usually easier than starting a new one.',
+      },
+      sixTwelve: {
+        cashflow:
+          "A consistent surplus is your 'savings rate' — and over time it matters more for your goals than income or investment cleverness.",
+        emergency:
+          'Many people use three to six months of essentials to orient themselves — a common starting point, not a finish line or a grade. What’s truly enough depends on the shape of your own life.',
+        debt: "As each debt clears, its old payment rolls onto the next; the snowball accelerates because your monthly firepower stays the same while the debts shrink.",
+        retirement:
+          "Time in the market, not timing it, is the reliable driver of long-term growth — one confident start beats years of waiting for the 'right' moment.",
+        insurance: 'Coverage exists to transfer risks you could not absorb yourself; understanding each type reveals which risks you are still carrying alone.',
+        stress: 'Routines turn willpower into infrastructure — what once took a decision each time becomes automatic, freeing mental energy for everything else.',
+        steady:
+          "Goals with a specific measure and deadline ('$X by December') are far more likely to happen than vague intentions — a finding replicated for decades.",
+      },
+    },
+    habitsLearn: [
+      'Regular reviews catch drift early — like a small course correction on a long flight, tiny adjustments now prevent big detours later.',
+      'When saving happens before spending, it survives. This single ordering trick sits behind most successful savings systems.',
+      'A short delay separates wanting from buying, letting the first impulse fade so only genuinely valued purchases remain.',
+    ],
+    vision: {
+      building:
+        'Five years from now, the small steps you take this month will quietly have become your normal. Picture a version of your finances where a surprise bill is an inconvenience, not a crisis — where saying "no" to something today is really saying "yes" to something that matters more later. You never have to see the whole staircase; just keep taking the next step. This is how ordinary people build remarkable stability: not in leaps, but in seasons.',
+      strengthening:
+        'Five years from now, the steadiness you have already built can become something larger: freedom. The freedom to weather the unexpected without flinching, to say yes to opportunities, to let your money serve the life you actually want rather than the other way around. From here the work is less about fixing and more about protecting, deepening, and choosing. You have earned the better question — not "will I be okay?" but "what do I want to build?"',
+      learn:
+        'The long game rewards consistency over intensity. Small habits repeated for years compound quietly into a financial life that once felt out of reach — the single most reliable pattern in personal finance.',
+    },
+    actions: { retake: 'Retake the checkup', home: 'Back to home', learn: 'Learning Center' },
+    curriculum: {
+      note: 'Every "Learn" note draws on the financial-planning curriculum.',
+      refLabel: 'From the curriculum',
+      map: {
+        cashflow: { ch: '3', title: 'Cash Flow & Net Worth Planning' },
+        emergency: { ch: '3', title: 'Cash Flow & Net Worth Planning' },
+        debt: { ch: '3', title: 'Cash Flow & Net Worth Planning' },
+        retirement: { ch: '12', title: 'Retirement Planning' },
+        insurance: { ch: '5–9', title: 'Insurance & Risk Management' },
+        stress: { ch: '1', title: 'The Financial Planning Process' },
+        steady: { ch: '1', title: 'The Financial Planning Process' },
+      },
+      habits: [
+        { ch: '3', title: 'Cash Flow & Net Worth Planning' },
+        { ch: '3', title: 'Cash Flow & Net Worth Planning' },
+        { ch: '1', title: 'The Financial Planning Process' },
+      ],
+      vision: { ch: '1', title: 'The Financial Planning Process' },
+    },
+    explored: {
+      label: 'From what you\u2019ve explored',
+      sub: 'Insights you\u2019ve gathered, one topic at a time — this section grows as you explore more.',
+      stepLabel: 'Your step',
+      exploreMore: 'Explore another topic',
+      onlyEyebrow: 'Your roadmap is taking shape',
+      onlyTitle: 'A path made from what you\u2019ve explored.',
+      onlyBody: 'You haven\u2019t taken the checkup yet, so this roadmap is built from the topics you\u2019ve explored so far. Take the two-minute checkup anytime to add a personalized, time-based plan alongside it.',
+      onlyCta: 'Try the checkup',
+    },
+    revisitLabel: 'When to revisit',
+    revisit: {
+      today: 'Look again in a week — it only takes a minute.',
+      next30: 'Check back at the end of the month.',
+      habits: 'These are meant to repeat — revisit each month.',
+      sixTwelve: 'Revisit in a few months, or sooner if life changes.',
+      vision: 'Revisit once a year, or whenever something big shifts.',
+    },
+  },
+
+  ko: {
+    empty: {
+      eyebrow: '나의 길',
+      title: '아직 여기엔 아무것도 없어요 — 괜찮아요.',
+      body: '약 2분이면 되는 짧은 점검 하나로 시작하면, 당신의 길이 이곳에서 자라기 시작해요 — 오늘의 작은 한 걸음과, 어디로 향하는지에 대한 부드러운 감각이요. 어디로도 전송되지 않고, 모두 기기에만 남아요.',
+      cta: '한번 살펴보기',
+    },
+    header: {
+      eyebrow: '나의 로드맵',
+      title: '당신의 체크업으로 만든 길.',
+      based: '체크업 결과 기준',
+      ongoing: '이건 마지막 말이 아니라, 언제든 다시 찾는 동반자예요. 삶이 변하면 함께 변해요.',
+      intros: {
+        strong:
+          '체크업 결과, 정말로 단단한 토대가 보였어요 — 그래서 이 로드맵은 무언가를 고치기보다, 이미 가진 강점 위에 쌓아 가는 데 가깝습니다.',
+        stable:
+          '체크업 결과, 분명한 강점을 지닌 꽤 안정적인 그림이 보였어요 — 그래서 이 로드맵은 한꺼번에 요구하지 않고, 가장 큰 도움이 될 곳으로 힘을 모아 줍니다.',
+        mixed:
+          '체크업 결과, 하나둘 자리를 잡아 가는 그림이 보였어요 — 단단한 조각들이 이미 있고, 몇몇 영역이 부드러운 관심을 기다리고 있죠. 이 로드맵은 그것들을 한 번에 하나씩 다룹니다.',
+        stretched:
+          '체크업 결과, 지금은 조금 빠듯하게 느껴지는 상태였어요 — 그래서 이 로드맵은 짐을 먼저 더는, 작고 가까운 걸음부터 시작합니다. 부담 없이, 그저 다음 한 걸음이에요.',
+      },
+      focusLinePrefix: '그 시작은 ',
+      focusLineSuffix: '이고, 거기서부터 자라 갑니다 — 한 번에 한 걸음씩, 부드럽게.',
+      focusLabel: {
+        cashflow: '당신의 매달 현금 흐름',
+        emergency: '작은 비상금',
+        debt: '빚 부담 덜기',
+        retirement: '미래를 위한 시작',
+        insurance: '보장 내용 이해하기',
+        stress: '돈 스트레스 덜기',
+        steady: '다음 목표 고르기',
+      },
+      recapLabel: '체크업에서',
+      chips: { focus: '집중', emergency: '비상금', cashflow: '현금 흐름', stress: '스트레스' },
+      months: '개월',
+      cashflowStates: { short: '적자', even: '수지 균형', healthy: '건강한 여유', strong: '든든한 여유' },
+      plan: {
+        heading: '당신이 정한 계획', chosenByYou: '당신의 선택',
+        roomLine: '남는 여유', gapLine: '이번 달 부족액', changeLine: '평소 대비 변화',
+        changedHeading: '바꾼 내용',
+        plansPath: '내 계획에서 열기',
+        staleNote: '이전 체크업 기준이에요. 다시 살펴볼까요?',
+        review: '다시 보기', edit: '수정', remove: '삭제',
+        checkupPath: '체크업으로 가기',
+        leverLabels: { income: '들어오는 돈', essentials: '꼭 나가는 돈', nonEssentials: '융통 가능한 지출', debt: '부채 상환' },
+      },
+      debtPlan: {
+        heading: '당신이 고른 부채 계획',
+        chosenByYou: '당신이 고른 것',
+        currentPayment: '현재 상환액',
+        chosenPayment: '고른 상환액',
+        durationChange: '예상 기간 변화',
+        interestChange: '예상 이자 변화',
+        noChange: '변화 없음',
+        review: '다시 보기', edit: '수정', remove: '삭제', plansPath: '내 계획에서 열기',
+      },
+      emergencyPlan: {
+        heading: '당신이 고른 비상금 계획',
+        chosenByYou: '당신이 고른 것',
+        accessible: '꺼내 쓸 수 있는 돈',
+        mustPays: '월 필수 지출',
+        months: '예상 개월',
+        monthsUnit: '개월',
+        changeInMonths: '개월 변화',
+        stale: '이전 체크업 그림 기준',
+        checkupPath: '체크업으로 가기',
+        review: '다시 보기', edit: '수정', remove: '삭제', plansPath: '내 계획에서 열기',
+      },
+      goalPlan: {
+        heading: '당신이 고른 목표 계획',
+        chosenByYou: '당신이 고른 것',
+        target: '목표금액',
+        contribution: '매달 넣는 금액',
+        projected: '목표 시점 예상액',
+        remainingGap: '목표까지 남은 금액',
+        aboveTarget: '목표 초과액',
+        exactly: '목표와 같음',
+        progress: '예상 진행률',
+        annualAssumption: '연간 가정',
+        review: '다시 보기', edit: '수정', remove: '삭제', plansPath: '내 계획에서 열기',
+      },
+      retirementPlan: {
+        heading: '당신이 고른 은퇴 계획',
+        chosenByYou: '당신이 고른 것',
+        years: '은퇴까지 연수',
+        contribution: '매달 넣는 금액',
+        annualReturn: '가정 연간 수익률',
+        projected: '예상 잔액',
+        balanceDiff: '예상 잔액 차이',
+        employer: '고용주 월 적립액',
+        contribChange: '연간 적립 변화율',
+        inflation: '물가상승률 가정',
+        inToday: '오늘의 구매력으로 본 금액',
+        review: '다시 보기', edit: '수정', remove: '삭제', plansPath: '내 계획에서 열기',
+      },
+      insurancePlan: {
+        heading: '당신이 고른 보호 계획',
+        chosenByYou: '당신이 고른 것',
+        responsibilities: '총 책임금액',
+        coverage: '보험 보장액',
+        share: '입력한 책임금액 대비 보호 비중',
+        uncovered: '입력한 보호자원으로 채워지지 않는 금액',
+        none: '입력한 값에서는 차이가 없어요',
+        beyond: '입력한 책임금액을 넘어서는 금액',
+        review: '다시 보기', edit: '수정', remove: '삭제', plansPath: '내 계획에서 열기',
+      },
+      stressBands: { low: '낮음', moderate: '보통', elevated: '다소 높음', high: '높음' },
+      cashflowSteer: {
+        label: '이걸 다뤄 볼 작은 방법 하나',
+        even: '월급 받는 날, 작은 고정 금액을 먼저 떼어 두세요 — 의도적으로 만드는 첫 여유예요.',
+        healthy: '남는 여유에 이름을 붙여 주세요 — 완충, 목표 — 갈 곳이 생기도록요.',
+        strong: '이번 달 여유가 흩어지기 전에 어디로 갈지 정해 두세요 — 여유가 계속 당신을 위해 일하도록요.',
+      },
+    },
+    horizons: {
+      today: { label: '오늘', lead: '지금 몇 분 안에 할 수 있는 작은 한 가지.' },
+      next30: { label: '앞으로 30일', lead: '앞으로 몇 주간의 부드러운 초점 — 서두르지 않아요.' },
+      habits: { label: '매달의 습관', lead: '시간이 지나며 조용히 큰일을 해내는 작은 리듬들.' },
+      sixTwelve: { label: '앞으로 6~12개월', lead: '발판을 다지며 향해 갈 이정표 하나.' },
+      fiveYear: { label: '장기적인 그림 (5년 이상)', lead: '이 모든 작은 걸음이 조용히 향하는 곳.' },
+    },
+    whyLabel: '왜 중요한가요',
+    learnLabel: '배워요',
+    learn: {
+      today: {
+        cashflow: '알아차림은 예산의 토대예요 — 돈이 어디로 가는지 적기만 해도, 의지력 없이 지출이 줄어드는 경향이 있어요.',
+        emergency: "이건 작은 규모의 '나에게 먼저 주기'예요: 소비 계좌에서 애초에 보이지 않는 돈이 지키기 훨씬 쉬워요.",
+        debt: '빚을 적는 건 거의 모든 상환법의 첫걸음이에요 — 전체 그림이 보여야 전략을 고를 수 있거든요.',
+        retirement: '노후 저축은 복리로 굴러가요 — 앞선 성장 위에 성장이 쌓이죠 — 그래서 오늘의 작은 시작이 몇 해 뒤의 큰 노력을 앞설 수 있어요.',
+        insurance: '보험은 위험을 나눠 지는 방식이에요: 여럿이 조금씩 내어, 누구도 재앙을 혼자 맞지 않게 하죠. 내 증권을 아는 건, 어떤 위험을 이미 나눠 뒀는지 아는 거예요.',
+        stress: "연구자들은 이를 '감정 이름 붙이기'라 불러요 — 감정에 이름을 붙이면 뇌에서 그 강도가 측정 가능하게 줄어듭니다.",
+        steady: '진전을 알아차리면 자기효능감 — 내가 상황을 바꿀 수 있다는 믿음 — 이 자라고, 이는 실행으로 이어질 가능성을 크게 높여요.',
+      },
+      next30: {
+        cashflow: "작고 지속 가능한 변화가 큰 변화를 이겨요 — '하나만 줄이기'가, 대개 원상복구되는 대대적 개편보다 낫습니다.",
+        emergency: '자동화가 동기를 이겨요: 한 번 걸어 둔 이체는 매달 당신이 규율을 지키는지에 더는 기대지 않아요.',
+        debt: "가장 작은 빚부터 갚는 건 '눈덩이' 방식이에요 — 이른 승리가 만드는 흐름이, 종이 위 최단 경로가 아닐 때에도 사람을 계속 나아가게 해요.",
+        retirement: '많은 직장 노후 제도에는 회사 매칭 — 사실상 공짜 돈 — 이 있어요. 그래서 무엇이 있는지 알아보는 10분이 개인 재무에서 가장 값진 시간이에요.',
+        insurance: '보험은 한도·자기부담금·면책 — 실제로 무엇이 지급되는지를 정하는 깨알 글씨 — 에 달려 있어요. 하나를 읽으면 모두를 읽는 법을 배우게 됩니다.',
+        stress: "끝내지 못한 일은 마음을 조용히 차지해요('자이가르닉 효과'); 딱 하나를 끝내면 그 고리가 닫혀 배경의 웅웅거림이 잦아들어요.",
+        steady: '습관은 안정된 환경의 반복으로 단단해져요 — 이미 가진 루틴을 깊게 하는 게 새로 시작하는 것보다 대개 쉬워요.',
+      },
+      sixTwelve: {
+        cashflow: "꾸준한 여유는 당신의 '저축률'이에요 — 시간이 지나면 목표에는 수입이나 투자 재주보다 이게 더 중요해요.",
+        emergency: '많은 사람이 3~6개월치 필수 지출로 방향을 잡아요 — 출발점일 뿐, 결승선이나 점수가 아니에요. 정말로 충분한 정도는 당신 삶의 모양에 달려 있어요.',
+        debt: '빚 하나가 정리되면 그 상환액이 다음으로 굴러가요; 총 월별 화력은 그대로인데 빚 수가 줄어드니 눈덩이가 가속됩니다.',
+        retirement: "타이밍이 아니라 '시장에 머문 시간'이 장기 성장의 믿을 만한 동력이에요 — 자신 있는 한 번의 시작이 '적기'를 기다린 수년을 이깁니다.",
+        insurance: '보험은 스스로 감당할 수 없는 위험을 넘기려 존재해요; 종류마다 이해하면, 아직 혼자 지고 있는 위험이 무엇인지 드러납니다.',
+        stress: '루틴은 의지력을 인프라로 바꿔요 — 매번 결정이 필요하던 일이 자동이 되어, 다른 모든 일에 쓸 정신적 에너지가 생겨요.',
+        steady: "구체적인 척도와 기한이 있는 목표('12월까지 X원')는 막연한 다짐보다 이뤄질 가능성이 훨씬 커요 — 수십 년간 반복 검증된 결과예요.",
+      },
+    },
+    habitsLearn: [
+      '정기 점검은 어긋남을 일찍 잡아요 — 긴 비행 중의 작은 항로 수정처럼, 지금의 미세 조정이 나중의 큰 우회를 막아 줍니다.',
+      '쓰기 전에 저축하면 그 저축은 살아남아요. 이 하나의 순서 요령이 성공한 저축 시스템 대부분의 바탕이에요.',
+      '짧은 유예가 원함과 삼을 갈라놓아, 첫 충동이 가라앉고 진짜 소중히 여기는 것만 남게 해요.',
+    ],
+    vision: {
+      building:
+        '5년 뒤, 이번 달 당신이 밟은 작은 걸음들은 어느새 당신의 일상이 되어 있을 거예요. 예상 밖의 청구서가 위기가 아니라 성가심에 그치는 재정을 그려 보세요 — 오늘 무언가에 "아니오"라고 하는 것이, 사실 나중에 더 중요한 것에 "예"라고 하는 것이 되는 삶을요. 계단 전체를 볼 필요는 없어요; 그저 다음 한 걸음을 계속 밟으면 됩니다. 평범한 사람들이 놀라운 안정을 쌓는 방식은 도약이 아니라 계절이에요.',
+      strengthening:
+        '5년 뒤, 당신이 이미 쌓은 안정은 더 큰 것 — 자유 — 가 될 수 있어요. 예상 밖의 일에도 흔들리지 않고, 기회에 예라고 말하고, 돈이 당신을 부리는 대신 당신이 원하는 삶을 돕게 하는 자유요. 여기서부터는 고치기보다 지키고, 두텁게 하고, 고르는 일에 가깝습니다. 당신은 더 나은 질문을 얻었어요 — "괜찮을까?"가 아니라 "무엇을 만들까?"라는 질문을요.',
+      learn:
+        '긴 게임은 강도보다 꾸준함에 보답해요. 여러 해 반복된 작은 습관이 조용히 복리로 쌓여, 한때 닿을 수 없어 보이던 재정 생활이 됩니다 — 개인 재무에서 가장 믿을 만한 단 하나의 패턴이에요.',
+    },
+    actions: { retake: '체크업 다시 하기', home: '홈으로', learn: '러닝 센터' },
+    curriculum: {
+      note: '모든 "배워요" 노트는 재무설계 커리큘럼에 바탕을 둡니다.',
+      refLabel: '커리큘럼에서',
+      map: {
+        cashflow: { ch: '3', title: '현금흐름과 순자산 설계' },
+        emergency: { ch: '3', title: '현금흐름과 순자산 설계' },
+        debt: { ch: '3', title: '현금흐름과 순자산 설계' },
+        retirement: { ch: '12', title: '은퇴 설계' },
+        insurance: { ch: '5–9', title: '보험과 위험관리' },
+        stress: { ch: '1', title: '재무설계 프로세스' },
+        steady: { ch: '1', title: '재무설계 프로세스' },
+      },
+      habits: [
+        { ch: '3', title: '현금흐름과 순자산 설계' },
+        { ch: '3', title: '현금흐름과 순자산 설계' },
+        { ch: '1', title: '재무설계 프로세스' },
+      ],
+      vision: { ch: '1', title: '재무설계 프로세스' },
+    },
+    explored: {
+      label: '탐색한 것에서',
+      sub: '한 번에 한 주제씩 모은 인사이트 — 더 탐색할수록 이 섹션은 자라요.',
+      stepLabel: '당신의 한 걸음',
+      exploreMore: '다른 주제 탐색하기',
+      onlyEyebrow: '로드맵이 모양을 갖춰 가요',
+      onlyTitle: '탐색한 것으로 만든 길.',
+      onlyBody: '아직 체크업을 하지 않아서, 이 로드맵은 지금까지 탐색한 주제들로 만들어졌어요. 언제든 2분 체크업을 하면 개인화된 시간별 계획이 함께 더해져요.',
+      onlyCta: '체크업 해보기',
+    },
+    revisitLabel: '다시 볼 때',
+    revisit: {
+      today: '일주일 뒤에 다시 보세요 — 1분이면 돼요.',
+      next30: '이달 말에 다시 확인해 보세요.',
+      habits: '이건 반복하라고 있는 거예요 — 매달 다시 보세요.',
+      sixTwelve: '몇 달 뒤에, 또는 삶이 바뀌면 더 일찍 다시 보세요.',
+      vision: '일 년에 한 번, 또는 큰 변화가 있을 때 다시 보세요.',
+    },
+  },
+}
